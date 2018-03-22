@@ -1,0 +1,103 @@
+/*
+Template name: Shades of Gray
+Template URI: http://www.cssmoban.com/shades-of-gray-website-template/
+Release date: 2006-11-05
+Description: Monochrome, lightweight and totally liquid. Comes with three different layouts.
+Author: Viktor Persson
+Author URI: http://cssmoban.com/
+
+This template is licensed under a Creative Commons Attribution 2.5 License:
+http://www.cssmoban.com/license/
+*/
+
+body {
+	background: #111 url(img/bg.jpg) repeat-y center top;
+	color: #BBB;
+	/*font: normal 62.5% "Lucida Sans Unicode",sans-serif;*/
+}
+
+/*p,ul {
+	font-size: 1.2em;
+	padding-bottom: 1.2em;
+}*/
+
+/*blockquote {font: bold 1em sans-serif;}*/
+
+/*img {border: none;}*/
+
+/*ul {margin-left: 2em;}
+h1 {font: normal 2.4em sans-serif;}
+h2 {
+	font: bold 1.6em Verdana,sans-serif;
+	padding-bottom: 4px;
+}*/
+
+/* misc */
+.clearer {clear: both;}
+.stripes {
+	background: #333 url(img/stripe.gif);
+	height: 6px;
+}
+.left {float: left;}
+.right {float: right;}
+
+/* header */
+.header {
+	background: #111;
+	border-bottom: 1px solid #333;
+	font: normal 2em sans-serif;
+	height: 120px;
+}
+
+/* structure */
+.t_container {
+	border: 3px solid #444;
+	border-top: none;
+}
+
+.main {
+	background: #303030;
+	border-bottom: 1px solid #2A2A2A;
+	border-left: 1px solid #2A2A2A;
+}
+.main .left {width: 75%;}
+.main .right {width: 25%;}
+
+.content {
+	border-left: 1px solid #444;
+	border-top: 1px solid #444;
+	padding: 16px;
+}
+
+/* navigation */
+.nav {background: #191919 url(img/nav.gif);}
+.nav a {
+	background: #191919 url(img/nav.gif);
+	border-right: 1px solid #161616;
+	color: #CCC;
+	float: left;
+	font: bold 20px '仿宋';
+	line-height: 51px;
+	padding: 0 20px;
+	text-decoration: none;
+}
+.nav a:hover {
+	background: #191919 url(img/nav_hover.gif);
+}
+
+/* sub-navigation */
+.subnav {
+	background: #2A2A2A;
+	border: 1px solid #1E1E1E;
+	border-top-color: #444;
+	padding: 12px;
+}
+
+/* footer */
+.footer {
+	background: #191919;
+	border-top: 1px solid #444;
+	color: #999;
+	padding: 3% 3% 1%;
+}
+

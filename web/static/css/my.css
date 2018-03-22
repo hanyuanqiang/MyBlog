@@ -1,0 +1,169 @@
+#article_list{
+    font-size: 17px;
+    padding: 20px;
+}
+
+#article_list_a{
+    color: #c39b63;
+    text-decoration: none;
+}
+
+#article_list_a:hover{
+    color: #d1dcc8;
+}
+
+#article_list_date_span{
+    font-size: 14px;
+}
+
+.main_type_list_li{
+    margin-left: -30px;
+    margin-bottom: 5px;
+    list-style-type:none;
+}
+.main_type_list_a{
+    color: #c39b63;
+    text-decoration: none;
+}
+.main_type_list_a:hover{
+    color: #d1dcc8;
+}
+
+#update_btn {
+    background-color: #31B0D5;
+    border-radius: 3px;
+    font-size: 13px;
+    padding: 1px 5px ;
+    color: white;
+    line-height: 1.5;
+    text-decoration: none;
+}
+
+#delete_btn {
+    background-color: #C9302C;
+    border-radius: 3px;
+    font-size: 13px;
+    padding: 1px 5px ;
+    color: white;
+    line-height: 1.5;
+    text-decoration: none;
+}
+
+/*常用横线*/
+.common_line {
+    margin: 0px auto 10px;
+    height: 1px;
+    width: 98%;
+    border-bottom: solid 1px #c0c0c0;
+    float: none;
+    clear: both;
+}
+
+#article_detail{
+    margin: 0px 15px;
+}
+
+#article_detail_title{
+    color: #c39b63;
+    font-size: 25px;
+    margin-bottom: 7px;
+}
+
+.article_detail_time_type{
+    font-size: 14px;
+}
+
+#article_editor{
+    margin-top: 10px;
+    margin-left: -15px;
+    /*border: 1px solid goldenrod;*/
+    width: 890px;
+}
+
+.article_edit_input{
+    background-color: inherit;
+    border: 1px white solid;
+    border-radius: 5px;
+    height: 35px;
+    width:450px;
+    color: white;
+    font-size: 18px;
+    font-family: 宋体;
+}
+
+.article_edit_label{
+    color: rgb(255, 237, 44);
+    font: 20px bold ;
+    font-family: 楷体;
+}
+
+#publish_button{
+    background-color: #186484;
+    font-size: 24px;
+    color: rgb(241,253,255);
+    font-family: 楷体;
+    border-radius: 5px;
+    border: 0px;
+    cursor:pointer;
+}
+
+.user_edit_label{
+    height: 40px;
+    font-size:25px;
+    font-family: 楷体;
+    color: yellow
+}
+
+#codeId{
+    border: solid #126573 1px;
+    font-size: 16px;
+    font-family: Arial;
+    background-color: #d1dcc8;
+    line-height: 25px;
+    padding: 15px 15px;
+    border-radius: 15px;
+    margin: 0;
+}
+#preId{
+    padding:0px;
+    background-color: inherit;
+}
+
+.head_nickName{
+    font-family: '楷体';
+}
+.head_en{
+    font-size: 20px;
+    vertical-align: top;
+    font-family: 'Times New Roman';
+    font-style: italic;
+    color: #a48716;
+}
+
+.update_file {
+    position: relative;
+    display: inline-block;
+    background: #D0EEFF;
+    border-radius: 5px;
+    padding: 4px 8px;
+    overflow: hidden;
+    color: #186484;
+    text-decoration: none;
+    text-indent: 0;
+    line-height: 20px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+.update_file input {
+    position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+}
+.update_file:hover {
+    background: #AADFFD;
+    border-color: #78C3F3;
+    color: #004974;
+    text-decoration: none;
+}
