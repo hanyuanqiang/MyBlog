@@ -5,10 +5,12 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.hyq.entity.Article;
 import com.hyq.entity.PageBean;
 import com.hyq.entity.Type;
-import com.hyq.entity.User;
 import com.hyq.entity.enum_.Article_visitAuth;
 import com.hyq.service.BaseService;
-import com.hyq.util.*;
+import com.hyq.util.CheckUtil;
+import com.hyq.util.Constants;
+import com.hyq.util.GetterUtil;
+import com.hyq.util.PropUtil;
 import org.springframework.format.datetime.DateFormatter;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.WebDataBinder;
@@ -19,7 +21,6 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.io.File;
-import java.io.UnsupportedEncodingException;
 import java.util.*;
 
 @Controller
@@ -40,6 +41,7 @@ public class ArticleController {
     
     @RequestMapping( "/list")
     public String list(Article s_article,Map<String,Object> map,Integer page,HttpSession session) throws Exception {
+        //当page为空的时候，清空所有查询条件
         if (CheckUtil.isEmpty(page)){
             session.setAttribute("createTime",null);
             session.setAttribute("typeId",null);
@@ -80,7 +82,7 @@ public class ArticleController {
         List<Article> articleList = baseService.find(Article.class,s_article, new PageBean(page,pageSize));
         map.put("page",page);
         int total = baseService.find(Article.class,s_article,null).size();
-        int count = (total/pageSize)+1;
+        int count = (total/pageSize)+1;     //总页数
         map.put("count",count);
         map.put("articleList",articleList);
         map.put("subPage",PropUtil.getValue(Constants.ARTICLE_JSP_LOCATION)+"list.jsp");
@@ -140,13 +142,10 @@ public class ArticleController {
                 String suffix = oldFileName.substring(oldFileName.lastIndexOf("."));
                 String newFileName = GetterUtil.getUUID()+suffix;
                 String finalFilePath = filePath+newFileName;
-                System.out.println("上传位置及新文件名："+finalFilePath);
                 file.transferTo(new File(finalFilePath));
                 String newAvatarUrl = request.getContextPath()+"/files/article_pic/"+newFileName;
                 pics.add(newAvatarUrl);
             }
-        }else{
-        
         }
         result.put("data",pics);
         result.put("errno",0);

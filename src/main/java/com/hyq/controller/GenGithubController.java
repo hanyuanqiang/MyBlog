@@ -6,7 +6,6 @@ import com.hyq.entity.User;
 import com.hyq.entity.enum_.Article_visitAuth;
 import com.hyq.service.BaseService;
 import com.hyq.util.*;
-import com.sun.org.apache.bcel.internal.generic.IF_ACMPEQ;
 import org.apache.commons.io.FileUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,17 +22,19 @@ import java.util.regex.Pattern;
 @RequestMapping("/github")
 public class GenGithubController {
     
+    //这种的公共部分(避免重复生成)
     private static String complete_public_part = null;
-
-//    private static List<Article> static_articleList = null;
     
+    //所有类型(避免重复查询)
     private static List<Type> static_typeList = null;
     
+    //文章归档(避免重复查询)
     private static Map<String,String> static_classifyByMonth = null;
     
-    //扫描文章内容的时候获取所有图片的文件名
+    //记录所有在文章内容中出现的图片文件名
     private static List<String> articlePicList = new ArrayList<String>();
-    //存储用户头像的文件名
+    
+    //存储用户头像的文件名(避免重复生成)
     private static String avatarPicFileName = null;
     
     @Resource
@@ -58,6 +59,7 @@ public class GenGithubController {
         String githubDir = PropUtil.getValue(Constants.GITHUB_DIR);
         String filePath = githubDir+"index.html";
         String replaceIndexSubPage = PropUtil.getValue(Constants.GITHUB_INDEX_SUBPAGE_REPLACE);
+        //整个主页内容由公共部分和子页面组成，子页面显示所有文章列表
         String result = getComplete_public_part(request).replace(replaceIndexSubPage,genArticleListSubPage(null,null));
         File file = new File(filePath);
         if (file.exists()){

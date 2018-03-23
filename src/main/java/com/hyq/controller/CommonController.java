@@ -18,6 +18,9 @@ import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
 import java.util.Map;
 
+/**
+ * 该类中的访问路径不用进行权限认证
+ */
 @Controller
 public class CommonController {
     
