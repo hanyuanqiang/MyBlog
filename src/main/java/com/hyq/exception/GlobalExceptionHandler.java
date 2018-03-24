@@ -10,7 +10,6 @@ import org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolv
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.UnsupportedEncodingException;
 
 @ControllerAdvice
 public class GlobalExceptionHandler extends DefaultHandlerExceptionResolver {

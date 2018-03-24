@@ -9,6 +9,11 @@ public class LoggerTest {
         logger.error("这是错误消息");
         logger.info("这是正常消息");
         logger.debug("这是调试信息");
+        try{
+            int a = 1/0;
+        }catch (Exception e){
+            logger.error(e);
+        }
     }
     
 }
