@@ -36,7 +36,6 @@ public class SystemStartListener extends HttpServlet implements WebApplicationIn
         
             String statement = "cmd.exe /C  mysqldump  -u"+dbUserName+" -p"+dbPassword+" "+dbName+">"+sqlFilePath;
             Runtime.getRuntime().exec(statement);
-        
             Thread.sleep(1000); //这里线程睡眠3秒的作用是防止上面语句执行了还未生成文件，下面的语句就会报错
             
         }catch (Exception e) {

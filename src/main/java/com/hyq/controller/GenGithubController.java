@@ -7,6 +7,7 @@ import com.hyq.entity.enum_.Article_visitAuth;
 import com.hyq.service.BaseService;
 import com.hyq.util.*;
 import org.apache.commons.io.FileUtils;
+import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -21,6 +22,8 @@ import java.util.regex.Pattern;
 @Controller
 @RequestMapping("/github")
 public class GenGithubController {
+    
+    private static Logger _log = Logger.getLogger(GenGithubController.class);
     
     //这种的公共部分(避免重复生成)
     private static String complete_public_part = null;
@@ -42,11 +45,16 @@ public class GenGithubController {
     
     @RequestMapping( "/gen")
     public String gen(HttpServletRequest request) throws Exception {
+        long startTime = System.currentTimeMillis();
         genIndex(request);  //生成首页
         genAllTypePage(request);    //生成所有类型页面
         genAllFilingPage(request);      //生成所有归档页面
         genAllArticlePage(request);     //生成所有文章页面
         syncFile(request);  //同步文件(包括清除多余、无用的文件)
+        long endTime = System.currentTimeMillis();
+    
+        _log.info("生成github页面总共耗时："+(endTime-startTime)/1000+"s");
+    
         return "redirect:/article/list";
     }
     
