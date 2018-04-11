@@ -244,5 +244,44 @@
 
 
 </script>
+
+<script>
+
+    var users = new Array();
+    var index = 0;
+    var intervalTime = 1000 * 2;
+    var executeTime = 1000 * 20;
+    setInterval(function () {
+        var text = $(".jschartli .name .js-nick");
+        text.each(function(){
+            var $this = $(this);
+            var nick = $this.text();
+            if(users.indexOf(nick)<0){
+                users[index] = nick;
+                index++;
+            }
+        });
+    },intervalTime);
+    setTimeout(function () {
+        alert("在"+(executeTime/1000)+"s内进入直播间的人数是"+users.length);
+    },executeTime);
+
+
+    var c1 = "111";
+    var c2 = "222";
+    var time = 6000;
+    var tag = true;
+    setInterval(function () {
+        if(tag){
+            $("#js-send-msg .cs-textarea").val(c1);
+        }else{
+            $("#js-send-msg .cs-textarea").val(c2);
+        }
+        $("#js-send-msg .b-btn").click();
+        tag = !tag;
+    },time);
+
+</script>
+
 </body>
 </html>

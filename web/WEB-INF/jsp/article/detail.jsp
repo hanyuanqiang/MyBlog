@@ -23,5 +23,12 @@
     <div class="common_line"></div>
     <p>${article.content}</p>
     <p style="height: 0;border-bottom: 1px #707172 solid;margin: 5px 0px"></p>
-    <p>关键词：<span style="font-size: 18px;font-family: 楷体;color: yellow;">${article.keywords}</span></p>
+    <p>
+        关键词：<span style="font-size: 18px;font-family: 楷体;color: yellow;">${article.keywords}</span>
+        <span style="width:20px">&nbsp;</span>
+        最后更新：
+        <span style="font-size: 15px;color: yellow;">
+            <fmt:formatDate value="${article.createTime}" pattern="yyyy-MM-dd hh:mm:ss"/>
+        </span>
+    </p>
 </div>

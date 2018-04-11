@@ -250,11 +250,12 @@ public class GenGithubController {
         String encrypt_article_script;
         
         String replaceArticleTitle = PropUtil.getValue(Constants.GITHUB_ARTICLE_TITLE_REPLACE);
-        String replaceArticleCrateTime = PropUtil.getValue(Constants.GITHUB_ARTICLE_CREATETIME_REPLACE);
+        String replaceArticleCreateTime = PropUtil.getValue(Constants.GITHUB_ARTICLE_CREATETIME_REPLACE);
         String replaceArticleSource = PropUtil.getValue(Constants.GITHUB_ARTICLE_SOURCE_REPLACE);
         String replaceArticleTypeName = PropUtil.getValue(Constants.GITHUB_ARTICLE_TYPENAME_REPLACE);
         String replaceArticleContent = PropUtil.getValue(Constants.GITHUB_ARTICLE_CONTENT_REPLACE);
         String replaceArticleKeywords = PropUtil.getValue(Constants.GITHUB_ARTICLE_KEYWORDS_REPLACE);
+        String replaceArticleUpdateTime = PropUtil.getValue(Constants.GITHUB_ARTICLE_UPDATETIME_REPLACE);
         String replaceArticleEncryptScript = PropUtil.getValue(Constants.GITHUB_ARTICLE_ENCRYPT_SCRIPT_REPLACE);
         String replaceXorCryptoSeparator = PropUtil.getValue(Constants.GITHUB_XOR_CRYPTO_SEPARATOR_REPLACE);
         
@@ -269,11 +270,12 @@ public class GenGithubController {
             encrypt_article_script = "";
         }
         String result = article_detail_model.replace(replaceArticleTitle,article.getTitle())
-                .replace(replaceArticleCrateTime,DateUtil.transDate2Str(article.getCreateTime()))
+                .replace(replaceArticleCreateTime,DateUtil.transDate2Str(article.getCreateTime()))
                 .replace(replaceArticleSource,GetterUtil.getString(article.getSource()))
                 .replace(replaceArticleTypeName,article.getType().getTypeName())
                 .replace(replaceArticleContent,articleContent)
                 .replace(replaceArticleKeywords,article.getKeywords())
+                .replace(replaceArticleUpdateTime,DateUtil.transDate2Str(article.getUpdateTime()))
                 .replace(replaceArticleEncryptScript,encrypt_article_script);
         
         return result;

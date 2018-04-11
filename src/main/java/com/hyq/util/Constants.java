@@ -62,6 +62,7 @@ public class Constants {
     public final static String GITHUB_ARTICLE_TYPENAME_REPLACE = "github.article.typeName.replace";
     public final static String GITHUB_ARTICLE_CONTENT_REPLACE = "github.article.content.replace";
     public final static String GITHUB_ARTICLE_KEYWORDS_REPLACE = "github.article.keywords.replace";
+    public final static String GITHUB_ARTICLE_UPDATETIME_REPLACE = "github.article.updateTime.replace";
     public final static String GITHUB_ARTICLE_ENCRYPT_SCRIPT_REPLACE = "github.article.encrypt.script.replace";
     public final static String GITHUB_USER_NICKNAME_REPLACE = "github.user.nickName.replace";
     public final static String GITHUB_USER_SIGNATURE_REPLACE = "github.user.signature.replace";
