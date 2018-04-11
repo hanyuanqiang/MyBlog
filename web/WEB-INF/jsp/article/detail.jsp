@@ -13,7 +13,7 @@
     <p id="article_detail_title" align="center">${article.title}</p>
     <p align="center" style="margin-bottom: 5px;">
         <span class="article_detail_time_type">
-            <fmt:formatDate value="${article.createTime}" pattern="yyyy-MM-dd hh:mm:ss"/>
+            <fmt:formatDate value="${article.createTime}" pattern="yyyy-MM-dd HH:mm:ss"/>
         </span>
         <span style="margin: 0 10px;"></span>
         <span class="article_detail_time_type">${article.source}</span>
@@ -28,7 +28,7 @@
         <span style="width:20px">&nbsp;</span>
         最后更新：
         <span style="font-size: 15px;color: yellow;">
-            <fmt:formatDate value="${article.createTime}" pattern="yyyy-MM-dd hh:mm:ss"/>
+            <fmt:formatDate value="${article.updateTime}" pattern="yyyy-MM-dd HH:mm:ss"/>
         </span>
     </p>
 </div>
